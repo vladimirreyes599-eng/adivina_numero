@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Número</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <!-- Título visible -->
+        <h1>🔢 Adivina el Número 🔢</h1>
+
+        <!-- Caja de texto para escribir el número -->
+        <div class="entrada">
+            <label for="numeroUsuario">Escribe tu número:</label>
+            <input type="number" id="numeroUsuario" placeholder="Ejemplo: 15" min="1" max="100">
+        </div>
+
+        <!-- Botón para comprobar -->
+        <button id="btnComprobar" class="boton comprobar">Comprobar</button>
+
+        <!-- Mensaje de resultado -->
+        <div id="mensaje" class="mensaje"></div>
+
+        <!-- Botón para reiniciar -->
+        <button id="btnReiniciar" class="boton reiniciar">Generar nuevo número</button>
+    </div>
+
+    <script>
+        // --- LÓGICA DEL JUEGO ---
+        // Generar número secreto aleatorio entre 1 y 100
+        let numeroSecreto = Math.floor(Math.random() * 100) + 1;
+
+        // Elementos de la página
+        const inputNumero = document.getElementById('numeroUsuario');
+        const btnComprobar = document.getElementById('btnComprobar');
+        const btnReiniciar = document.getElementById('btnReiniciar');
+        const mensaje = document.getElementById('mensaje');
+
+        // Función para comprobar el número
+        btnComprobar.addEventListener('click', function() {
+            // Obtener el valor ingresado
+            const numeroIngresado = parseInt(inputNumero.value);
+
+            // Validar que se haya escrito un número
+            if (isNaN(numeroIngresado)) {
+                mensaje.textContent = "⚠️ Por favor, escribe un número válido.";
+                mensaje.style.color = "#e74c3c";
+                return;
+            }
+
+            // Comparar con el número secreto
+            if (numeroIngresado < numeroSecreto) {
+                mensaje.textContent = "⬆️ El número es mayor";
+                mensaje.style.color = "#3498db";
+            } else if (numeroIngresado > numeroSecreto) {
+                mensaje.textContent = "⬇️ El número es menor";
+                mensaje.style.color = "#f39c12";
+            } else {
+                mensaje.textContent = "🎉 ¡¡¡ADIVINASTE!!!";
+                mensaje.style.color = "#2ecc71";
+            }
+        });
+
+        // Función para reiniciar el juego
+        btnReiniciar.addEventListener('click', function() {
+            numeroSecreto = Math.floor(Math.random() * 100) + 1;
+            inputNumero.value = "";
+            mensaje.textContent = "";
+        });
+    </script>
+</body>
+</html>
+a
