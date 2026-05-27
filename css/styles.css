@@ -1,0 +1,104 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background-color: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+/* Título */
+h1 {
+    color: #2c3e50;
+    font-size: 26px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Área de entrada de datos */
+.entrada {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.entrada label {
+    display: block;
+    color: #34495e;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.entrada input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.entrada input:focus {
+    border-color: #3498db;
+}
+
+/* Estilos de los botones */
+.boton {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.comprobar {
+    background-color: #3498db;
+    color: white;
+}
+
+.comprobar:hover {
+    background-color: #2980b9;
+}
+
+.reiniciar {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.reiniciar:hover {
+    background-color: #7f8c8d;
+}
+
+/* Área de mensajes */
+.mensaje {
+    font-size: 20px;
+    font-weight: bold;
+    min-height: 30px;
+    margin: 15px 0 25px;
+    padding: 10px;
+    border-radius: 6px;
+}
